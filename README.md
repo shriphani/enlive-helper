@@ -24,6 +24,8 @@ enlive's routines.
 An example of what you can do:
 
 ```clojure
+(use 'enlive-helper.core)
+
 (html-resource-steroids 
  (java.io.StringReader. "<html><body><a>hi</a></body></html>") 
  :prune-tags "a")

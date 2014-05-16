@@ -1,7 +1,8 @@
 (ns enlive-helper.core
   "Adding additional functionality to
    enlive."
-  (:require [net.cgrand.enlive-html :as html])
+  (:require [net.cgrand.enlive-html :as html]
+            [clj-http.client :as client])
   (:import (org.htmlcleaner HtmlCleaner)))
 
 (def options-fn-map
@@ -65,8 +66,8 @@
 (defn html-resource-steroids
   "A more flexible html-resource - inspired by
    html-cleaner's options. We invoke clj-xpath"
-  [text & options]
-  (let [processed (process-page text
+  [stream & options]
+  (let [processed (process-page stream
                                 (partition 2 options))]
     (-> processed
         java.io.StringReader.

@@ -1,6 +1,6 @@
 (defproject enlive-helper "0.1.0"
   :description "Enlive tools"
-  :url "http://example.com/FIXME"
+  :url "https://github.com/shriphani/enlive-helper"
   :license {:name "CRAPL License"
             :url "http://matt.might.net/articles/crapl/CRAPL-LICENSE.txt"}
   :dependencies [[clj-http "0.9.1"]

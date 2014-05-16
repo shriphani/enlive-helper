@@ -1,6 +1,7 @@
 (ns enlive-helper.core
   "Adding additional functionality to
    enlive."
+  (:require [net.cgrand.enlive-html :as html])
   (:import (org.htmlcleaner HtmlCleaner)))
 
 (def options-fn-map
@@ -38,8 +39,12 @@
         (if (nil? (options-fn-map k))
           (throw
            (Throwable. "Unsupported property"))
-          (let [routine (options-fn-map k)]
-            (eval (cons routine '(props v))))))
+          (do
+            (def props2 props)
+            (def v2 v)
+            (eval
+             (let [routine (options-fn-map k)]
+               (cons routine '(props2 v2)))))))
       props))
 
 (defn process-page
@@ -65,5 +70,6 @@
                                 (partition 2 options))]
     (-> processed
         java.io.StringReader.
-        (html/html-resource))))
+        html/html-resource)))
 
+(def options-list (keys options-fn-map))

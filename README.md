@@ -27,7 +27,7 @@ And this returns:
    {:tag :body, :attrs nil, :content nil})})
 ```
 
-As you can see, the <code><a></code> tag is not parsed.
+As you can see, the <code>a</code> tag is not parsed.
 
 ## Usage
 
@@ -74,7 +74,6 @@ in the
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Shriphani Palakodety
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the CRAPL License (see LICENSE)

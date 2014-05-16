@@ -7,6 +7,20 @@ script tags etc. The excellent
 bundles a lot of routines that I have exposed for easy use with
 enlive's routines.
 
+## With Leiningen
+```
+[enlive-helper "0.1.0"]
+```
+
+## With Maven
+```
+<dependency>
+  <groupId>enlive-helper</groupId>
+  <artifactId>enlive-helper</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
 An example of what you can do:
 
 ```clojure
